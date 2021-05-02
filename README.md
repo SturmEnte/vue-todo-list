@@ -1,19 +1,6 @@
-# todo-list
+# Todo List
 
-## Project setup
-```
-npm install
-```
+[Live Version](https://vue-todolist-sturmente.netlify.app/).
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## About
+I made this Project in 2 hours to test my VueJs skillst. I hope i did nothin wrong and everything is working fine.
