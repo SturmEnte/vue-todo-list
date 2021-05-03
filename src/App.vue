@@ -8,7 +8,7 @@
         :finished="todo.finished"
         :id="todo.id"
         @deleteTodo="deleteTodo"
-        @toggleTodo="toggleFinished"
+        @toggleFinished="toggleFinished"
       />
     </div>
   </div>
@@ -57,6 +57,8 @@ export default {
       let todos = this.todos;
       let todo = todos.filter((todo) => todo.id === id)[0];
       let i = todos.indexOf(todo);
+      console.table([todos, todo, i]);
+
       todo.finished = !todo.finished;
       todos[i] = todo;
       this.todos = todos;

@@ -2,7 +2,15 @@
   <div class="todo">
     <h3>{{ title }}</h3>
     <div id="util">
-      <input type="checkbox" :checked="finished" @click="toggleFinished" />
+      <input
+        type="checkbox"
+        id="checkbox"
+        @click="toggleFinished"
+        @input="toggleFinished"
+        v-if="finished"
+        checked
+      />
+      <input type="checkbox" id="checkbox" @click="toggleFinished" v-else />
       <button @click="deleteTodo">X</button>
     </div>
   </div>
