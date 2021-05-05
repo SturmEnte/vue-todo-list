@@ -30,21 +30,39 @@ export default {
   },
   methods: {
     createTodo() {
-      let todo = {
-        title: prompt("Todo Title"),
-        finished: false,
-        id: uuid(),
-      };
-      if (todo.title.length > 25) {
-        let titleArray = todo.title.split("");
+      let title = prompt("Todo Title");
+      if (title.startsWith(" ")) {
+        let titleSplit = title.split("");
+        let firstCharacter = false;
+        let newTitle = [];
+        titleSplit.forEach((val, i) => {
+          if (val != " ") {
+            firstCharacter = true;
+          }
+          if (firstCharacter == true) {
+            newTitle.push(val);
+          }
+        });
+        title = newTitle.join("");
+      }
+
+      if (title.length > 25) {
+        let titleArray = title.split("");
         let newTitle = [];
         titleArray.forEach((titleSplit, index) => {
           if (index + 1 < 25) {
             newTitle.push(titleSplit);
           }
         });
-        todo.title = newTitle.join("");
+        title = newTitle.join("");
       }
+
+      let todo = {
+        title: title,
+        finished: false,
+        id: uuid(),
+      };
+
       this.todos.push(todo);
       this.save();
     },
